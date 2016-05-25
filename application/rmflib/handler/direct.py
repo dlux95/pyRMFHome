@@ -37,11 +37,9 @@ def change_channel(channel):
     while cur < sol:
         remote.pressFrontRight()
         remote.setCurrentChannel(remote.getCurrentChannel()+1)
-        
+
     while cur > sol:
-        remote.pressLeftRight()
+        remote.pressFrontLeft()
         remote.setCurrentChannel(remote.getCurrentChannel()-1)
-
-
 
     return "{'error': 'OK'}"
