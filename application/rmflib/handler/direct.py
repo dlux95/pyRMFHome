@@ -32,7 +32,7 @@ def set_channel(channel):
 @crossdomain(origin='*', headers="Content-Type,Accept")
 def change_channel(channel):
     while int(remote.getCurrentChannel()) != int(channel):
-        remote.setCurrentChannel(remote.getCurrentChannel())
+        remote.setCurrentChannel(remote.getCurrentChannel()+1)
         remote.pressFrontRight()
 
     return "{'error': 'OK'}"
