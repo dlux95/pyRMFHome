@@ -26,7 +26,7 @@ class GPIORemote(Remote):
         Remote.getCurrentChannel(self)
         return self.currentChannel
 
-    def pressButton(number):
+    def pressButton(self, number):
         print "GPIORemote: pressButton:", number
         import RPi.GPIO as GPIO
         GPIO.output(number, GPIO.HIGH)
