@@ -40,4 +40,4 @@ class Remote(object):
 
     def setCurrentChannel(self, channel):
         print "Remote: setCurrentChannel", channel
-        self.currentChannel = channel
+        self.currentChannel = channel % 16
