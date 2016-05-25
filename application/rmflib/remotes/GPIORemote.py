@@ -32,7 +32,7 @@ class GPIORemote(Remote):
         GPIO.output(number, GPIO.HIGH)
         time.sleep(0.2)
         GPIO.output(number, GPIO.LOW)
-        time.sleep(0.1)
+        time.sleep(0.2)
 
     def pressBackHigh(self):
         Remote.pressBackHigh(self)
@@ -47,7 +47,7 @@ class GPIORemote(Remote):
         self.pressButton(GPIORemote.D_LEFT)
 
     def pressFrontRight(self):
-        Remote.pressFronRight(self)
+        Remote.pressFrontRight(self)
         self.pressButton(GPIORemote.D_RIGHT)
 
     def pressBackLeft(self):

@@ -27,3 +27,12 @@ def direct_press(buttonkey):
 def set_channel(channel):
     remote.setCurrentChannel(channel)
     return "{'error': 'OK'}"
+
+@app.route('/api/v1.0/remote/change_channel/<int:channel>', methods=['GET'])
+@crossdomain(origin='*', headers="Content-Type,Accept")
+def change_channel(channel):
+    while remote.getCurrentChannel() != channel:
+        remote.setCurrentChannel(remote.getCurrentChannel())
+        remote.pressFrontRight();
+
+    return "{'error': 'OK'}"
