@@ -15,7 +15,7 @@ class GPIORemote(Remote):
     def __init__(self):
         import RPi.GPIO as GPIO
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup((B_HIGH, B_LOW, D_LEFT, D_RIGHT, B_LEFT, D_CENTER, D_DOWN, D_UP), GPIO.OUT)
+        GPIO.setup((GPIORemote.B_HIGH, GPIORemote.B_LOW, GPIORemote.D_LEFT, GPIORemote.D_RIGHT, GPIORemote.B_LEFT, GPIORemote.D_CENTER, GPIORemote.D_DOWN, GPIORemote.D_UP), GPIO.OUT)
 
         self.currentChannel = 0
         f = open("/currentChannel", "r")
