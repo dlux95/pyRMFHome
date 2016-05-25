@@ -60,7 +60,7 @@ class GPIORemote(Remote):
 
     def pressFrontDown(self):
         Remote.pressFrontDown(self)
-        self.pressButton(GPIORemote.D_CENTER)
+        self.pressButton(GPIORemote.D_DOWN)
 
     def pressFrontUp(self):
         Remote.pressFrontUp(self)
