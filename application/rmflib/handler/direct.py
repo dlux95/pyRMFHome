@@ -33,15 +33,13 @@ def set_channel(channel):
 def change_channel(channel):
     cur = int(remote.getCurrentChannel())
     sol = int(channel)
-
-    while cur < sol:
+    while cur != sol:
         cur = int(remote.getCurrentChannel())
-        remote.pressFrontRight()
-        remote.setCurrentChannel(remote.getCurrentChannel()+1)
-
-    while cur > sol:
-        cur = int(remote.getCurrentChannel())
-        remote.pressFrontLeft()
-        remote.setCurrentChannel(remote.getCurrentChannel()-1)
+        if cur < sol:
+            remote.pressFrontRight()
+            remote.setCurrentChannel(remote.getCurrentChannel() + 1)
+        if cur > sol:
+            remote.pressFrontLeft()
+            remote.setCurrentChannel(remote.getCurrentChannel()-1)
 
     return "{'error': 'OK'}"
