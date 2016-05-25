@@ -4,7 +4,8 @@ try:
     #RPi usable, use GPIO Remote
     remote = GPIORemote()
     print "Using GPIO Remote"
-except:
+except Exception as e:
+    print e
     #No RPI Usable, use Remote without functionality
     from Remote import Remote
     remote = Remote()
