@@ -1,4 +1,7 @@
 class Remote(object):
+    def __init__(self):
+        self.currentChannel = 0;
+
     def pressBackHigh(self):
         print "Remote: pressBackHigh"
         pass
@@ -33,8 +36,8 @@ class Remote(object):
 
     def getCurrentChannel(self):
         print "Remote: getCurrentChannel"
-        pass
+        return self.currentChannel
 
     def setCurrentChannel(self, channel):
         print "Remote: setCurrentChannel", channel
-        pass
+        self.currentChannel = channel

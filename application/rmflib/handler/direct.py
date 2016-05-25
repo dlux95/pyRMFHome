@@ -3,7 +3,7 @@ from application.decorators import crossdomain
 from application.rmflib.remotes import remote
 
 
-@app.route('/api/v1.0/direct_press/<string:buttonkey>', methods=['GET'])
+@app.route('/api/v1.0/remote/press/<string:buttonkey>', methods=['GET'])
 @crossdomain(origin='*', headers="Content-Type,Accept")
 def direct_press(buttonkey):
     mapping = {
@@ -21,3 +21,9 @@ def direct_press(buttonkey):
         return "{'error': 'OK'}"
     else:
         return "{'error': 'NO_SUCH_KEY'}"
+
+@app.route('/api/v1.0/remote/set_channel/<int:channel>', methods=['GET'])
+@crossdomain(origin='*', headers="Content-Type,Accept")
+def set_channel(channel):
+    remote.setCurrentChannel(channel)
+    return "{'error': 'OK'}"
