@@ -19,12 +19,11 @@ class GPIORemote(Remote):
 
         self.currentChannel = 0
         f = open("/currentChannel", "r")
-        self.currentChannel = int(f.readline())
+        self.setCurrentChannel(int(f.readline()))
         f.close()
 
-    def getCurrentChannel(self):
-        Remote.getCurrentChannel(self)
-        return self.currentChannel
+    def setCurrentChannel(self, channel):
+        Remote.setCurrentChannel(self, channel)
 
     def pressButton(self, number):
         print "GPIORemote: pressButton:", number

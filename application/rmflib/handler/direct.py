@@ -32,13 +32,8 @@ def set_channel(channel):
 @crossdomain(origin='*', headers="Content-Type,Accept")
 def change_channel(channel):
     while int(remote.getCurrentChannel()) != int(channel):
-        if  int(channel) > int(remote.getCurrentChannel()):
-            remote.pressFrontLeft()
-            remote.setCurrentChannel(remote.getCurrentChannel()-1)
-
-        if int(channel) < int(remote.getCurrentChannel()):
-            remote.pressFrontRight()
-            remote.setCurrentChannel(remote.getCurrentChannel()+1)
+        remote.pressFrontRight()
+        remote.setCurrentChannel(remote.getCurrentChannel()+1)
 
 
 
