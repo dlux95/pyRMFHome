@@ -66,11 +66,3 @@ class GPIORemote(Remote):
         Remote.pressFrontUp(self)
         self.pressButton(GPIORemote.D_UP)
 
-
-
-
-
-pressButton(D_UP)
-
-GPIO.cleanup()
-
