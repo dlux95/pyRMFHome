@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-import sys
-sys.path.insert(1, "../")
-from ... import app
+from application import app
 
 if __name__ == '__main__':
     """
