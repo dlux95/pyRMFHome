@@ -4,12 +4,6 @@ app = Flask(__name__)
 
 from application.rmflib.handler.direct import *
 
-
-
-
-
-
-
 @app.errorhandler(400)
 def not_found(error):
     """
