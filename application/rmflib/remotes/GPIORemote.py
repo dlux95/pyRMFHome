@@ -1,4 +1,4 @@
-from application.rmflib.remotes import Remote
+from application.rmflib.remotes.Remote import Remote
 import time
 
 
