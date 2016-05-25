@@ -1,4 +1,4 @@
-from remotes import Remote
+from application.rmflib.remotes import Remote
 import time
 
 
