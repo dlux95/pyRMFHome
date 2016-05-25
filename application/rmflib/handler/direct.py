@@ -35,10 +35,12 @@ def change_channel(channel):
     sol = int(channel)
 
     while cur < sol:
+        cur = int(remote.getCurrentChannel())
         remote.pressFrontRight()
         remote.setCurrentChannel(remote.getCurrentChannel()+1)
 
     while cur > sol:
+        cur = int(remote.getCurrentChannel())
         remote.pressFrontLeft()
         remote.setCurrentChannel(remote.getCurrentChannel()-1)
 
