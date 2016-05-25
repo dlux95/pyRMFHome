@@ -31,13 +31,12 @@ def set_channel(channel):
 @app.route('/api/v1.0/remote/change_channel/<int:channel>', methods=['GET'])
 @crossdomain(origin='*', headers="Content-Type,Accept")
 def change_channel(channel):
-    diff = int(remote.getCurrentChannel()) - int(channel)
     while int(remote.getCurrentChannel()) != int(channel):
-        if  int(channel) < int(remote.getCurrentChannel()):
+        if  int(channel) > int(remote.getCurrentChannel()):
             remote.pressFrontLeft()
             remote.setCurrentChannel(remote.getCurrentChannel()-1)
 
-        if int(channel) > int(remote.getCurrentChannel()):
+        if int(channel) < int(remote.getCurrentChannel()):
             remote.pressFrontRight()
             remote.setCurrentChannel(remote.getCurrentChannel()+1)
 
